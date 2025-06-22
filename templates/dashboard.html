@@ -1,5 +1,99 @@
-<h2>Welcome, {{ user }}</h2>
-<form action="/search" method="get">
-  Search Anime: <input name="q">
-  <button type="submit">Search</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .dashboard-box {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      text-align: center;
+      animation: fadeIn 0.6s ease-in-out;
+      width: 100%;
+      max-width: 450px;
+    }
+
+    @keyframes fadeIn {
+      0% { transform: scale(0.95); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .dashboard-box h2 {
+      margin-bottom: 25px;
+      color: #444;
+    }
+
+    input[type="text"] {
+      width: 70%;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      transition: 0.3s;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: #f76d57;
+      box-shadow: 0 0 8px rgba(247,109,87,0.5);
+    }
+
+    button {
+      padding: 12px 20px;
+      background: #f76d57;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #e65b48;
+      transform: scale(1.05);
+    }
+
+    @media screen and (max-width: 500px) {
+      input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      button {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-box">
+    <h2>👋 Welcome, {{ user }}</h2>
+    <form action="/search" method="get">
+      <input type="text" name="q" placeholder="Search your favorite anime..." required>
+      <button type="submit">🔍 Search</button>
+    </form>
+  </div>
+</body>
+</html>
+
