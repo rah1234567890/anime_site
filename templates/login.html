@@ -1,7 +1,113 @@
-<form action="/login" method="post">
-  <h2>Login</h2>
-  Username: <input name="username"><br>
-  Password: <input type="password" name="password"><br>
-  <button type="submit">Login</button><br>
-  <a href="/register">Register</a>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anime Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(120deg, #f093fb, #f5576c);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      animation: popUp 0.5s ease-in-out;
+    }
+
+    @keyframes popUp {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
+
+    .login-box input:focus {
+      border-color: #f093fb;
+      box-shadow: 0 0 8px #f093fb;
+      outline: none;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      background: #f093fb;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .login-box button:hover {
+      background: #f5576c;
+      transform: scale(1.02);
+    }
+
+    .login-box a {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      color: #f5576c;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .login-box a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 500px) {
+      .login-box {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <form class="login-box" action="/login" method="post">
+    <h2>Login to Anime World</h2>
+    <input type="text" name="username" placeholder="👤 Username" required>
+    <input type="password" name="password" placeholder="🔒 Password" required>
+    <button type="submit">🚀 Login</button>
+    <a href="/register">🌸 Register a new account</a>
+  </form>
+</body>
+</html>
+
