@@ -1,87 +1,147 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - AnimeHub</title>
-  <link rel="stylesheet" href="/static/style.css">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #2c3e50, #4ca1af);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }.login-container {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(10px);
-  text-align: center;
-  width: 90%;
-  max-width: 400px;
-  animation: fadeIn 1s ease-out;
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.login-container h2 {
+/* Body Styling */
+body {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
   color: #fff;
-  margin-bottom: 30px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
 }
 
-.login-container input, .login-container button {
+/* Container */
+.container {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   width: 100%;
-  padding: 15px;
-  margin: 10px 0;
+  max-width: 450px;
+  transition: 0.3s ease;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.container:hover {
+  transform: scale(1.01);
+}
+
+/* Headings */
+h2, h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00f5d4;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
+  background: #222831;
+  color: #fff;
   font-size: 16px;
 }
 
-.login-container input {
-  background: #f4f4f4;
+input:focus {
+  outline: 2px solid #00adb5;
+  background: #393e46;
 }
 
-.login-container button {
-  background: #ff4b2b;
+/* Buttons */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #00adb5;
+  border: none;
+  border-radius: 8px;
   color: #fff;
+  font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
   transition: background 0.3s ease;
 }
 
-.login-container button:hover {
-  background: #ff416c;
+button:hover {
+  background: #00f5d4;
+  color: #222;
 }
 
-.login-container a {
-  color: #00e3ff;
+/* Links */
+a {
+  color: #00f5d4;
   text-decoration: none;
-  display: block;
-  margin-top: 15px;
+  display: inline-block;
+  margin-top: 10px;
+  text-align: center;
 }
 
-.login-container a:hover {
+a:hover {
   text-decoration: underline;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Anime Cards */
+.anime-card {
+  background: #222831;
+  border: 1px solid #393e46;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  animation: slideUp 0.5s ease forwards;
 }
 
-  </style>
-</head>
-<body>
-  <div class="login-container">
-    <h2>Login to AnimeHub</h2>
-    <form action="/login" method="post">
-      <input type="text" name="username" placeholder="Username" required>
-      <input type="password" name="password" placeholder="Password" required>
-      <button type="submit">Login</button>
-      <a href="/register">Don't have an account? Register here</a>
-    </form>
-  </div>
-</body>
-</html>
+.anime-card img {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.anime-card h3 {
+  margin-bottom: 10px;
+  color: #00f5d4;
+}
+
+.anime-card p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+}
