@@ -1,6 +1,111 @@
-<form action="/register" method="post">
-  <h2>Register</h2>
-  Username: <input name="username"><br>
-  Password: <input type="password" name="password"><br>
-  <button type="submit">Register</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .register-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      animation: slideIn 0.5s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .register-box h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .register-box input {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
+
+    .register-box input:focus {
+      border-color: #66a6ff;
+      box-shadow: 0 0 8px #66a6ff;
+      outline: none;
+    }
+
+    .register-box button {
+      width: 100%;
+      padding: 12px;
+      background: #66a6ff;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .register-box button:hover {
+      background: #4e8fff;
+      transform: scale(1.03);
+    }
+
+    .register-box a {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      color: #4e8fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .register-box a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 500px) {
+      .register-box {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <form class="register-box" action="/register" method="post">
+    <h2>Create Your Anime Account</h2>
+    <input type="text" name="username" placeholder="👤 Choose a username" required>
+    <input type="password" name="password" placeholder="🔒 Create a password" required>
+    <button type="submit">✨ Register</button>
+    <a href="/">← Already have an account? Login</a>
+  </form>
+</body>
+</html>
+
