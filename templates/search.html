@@ -1,0 +1,11 @@
+<h2>Anime Results</h2>
+{% for anime in data %}
+  <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+    <h3>{{ anime.title }}</h3>
+    <img src="{{ anime.images.jpg.image_url }}" width="150"><br>
+    <strong>Score:</strong> {{ anime.score }}<br>
+    <p>{{ anime.synopsis }}</p>
+    <a href="{{ anime.url }}" target="_blank">View on MyAnimeList</a><br>
+    <a href="https://example.com/download/{{ anime.title | replace(' ', '-') }}.mp4">Download</a>
+  </div>
+{% endfor %}
